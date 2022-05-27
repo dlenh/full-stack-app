@@ -15,6 +15,12 @@ const server = http.createServer((req, res) => {
             res.write(data);
             res.end();
         })
+    } else if (page == "/style.css") {
+        fs.readFile("style.css", function(err, data) {
+            // res.writeHead(200, {"Content-Type": "text/javascript"});
+            res.write(data);
+            res.end();
+        });
     } else if (page == "/main.js") {
         fs.readFile("main.js", function(err, data) {
             res.writeHead(200, {"Content-Type": "text/javascript"});
